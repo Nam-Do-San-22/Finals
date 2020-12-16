@@ -1,0 +1,61 @@
+body{
+
+    background: linear-gradient(45deg, #e98061, #c9326c, #2190b8, #1fb390);
+    background-size: 400% 400%;
+    
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.cont{
+	margin: auto;
+background: #68686849;
+width: 80%;
+padding: auto;
+}
+
+form {
+	width: 80%;
+	margin: 0 auto;
+  }
+  
+  label,
+  input {
+	border-radius: 5px;
+	display: inline-block;
+	
+
+  }
+  
+  label {
+	width: 30%;
+
+	text-align: right;
+  }
+  
+  label+input {
+	width: 30%;
+
+	margin: 0 30% 0 4%;
+  }
+  
+  
+
+  
+  input+input {
+	float: right;
+  }
+
+  
+ 
