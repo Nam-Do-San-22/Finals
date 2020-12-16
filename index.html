@@ -28,11 +28,11 @@
         <label for="email"> Email </label>
         <input type="email" name="Email" id="email" value="" placeholder=" your email should have '@' sign"> <br><br>
         <label  for="UserName">Username</label>
-        <input type="text" minlength="5" name="UserName " value="" placeholder="User Name" > <br><br>
+        <input type="text" minlength="5" name="UserName " value="" placeholder="User Name" required> <br><br>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password1"><br><br>
+        <input type="password" id="password" name="password1" required><br><br>
         <label for="password2">Confirm password</label>
-        <input type="password" id="confirm_password" name="password2"><br><br>
+        <input type="password" id="confirm_password" name="password2" required><br><br>
 
         <div class="row">
           <div class="col-md-12 pr-5 text-center">
@@ -50,21 +50,20 @@
 
 
 
-function validateForm()
-{
-  var fields = ["FirstName", "MiddleName", "LastName", "ContactNumber", "Email", "UserName"]
+function validateForm(){
+        var fields = ["FirstName", "MiddleName", "LastName", "ContactNumber", "Email", "UserName","password","confirm_password"]
+        var x, l = fields.length;
+        var fieldname;
+        for (x = 0; x < l; x++) {
+          fieldname = fields[x];
+          if (document.forms["Form"][fieldname].value === "") {
+            alert(fieldname + " cannot be empty");
+            return false;
+          }
+        }
+        return true;
+      }
 
-  var i, x = fields.length;
-  var fieldname;
-  for (i = 0; i < x; i++) {
-    fieldname = fields[i];
-    if (document.forms["Form"][fieldname].value === "") {
-      alert(fieldname + " can not be empty");
-      return false;
-    }
-  }
-  return true;
-}
 
       var password = document.getElementById("password")
       , confirm_password = document.getElementById("confirm_password");
@@ -79,6 +78,7 @@ function validateForm()
 
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
+
 
     </script>
     
